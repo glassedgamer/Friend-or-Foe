@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour {
     [SerializeField] Text pointsText;
     [SerializeField] Text livesText;
 
+    GameObject levelChanger;
+
     bool gameNotOver = true;
 
     float timerValue = 5;
@@ -22,6 +24,8 @@ public class GameManager : MonoBehaviour {
     WaitForSeconds countDownTimerInterval;
 
     void Start() {
+        levelChanger = GameObject.FindWithTag("LevelChanger");
+
         lives = 3;
 
         timerText.text = points + " Points";
@@ -114,6 +118,8 @@ public class GameManager : MonoBehaviour {
         gameNotOver = false;
 
         print("GAME OVER NOOB");
+
+        levelChanger.GetComponent<LevelChanger>().LoadGameOver();
     }
 
     // Timer function
