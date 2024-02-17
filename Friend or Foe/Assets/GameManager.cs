@@ -7,11 +7,14 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] Text timerText;
     [SerializeField] Text pointsText;
+    [SerializeField] Text livesText;
 
     bool gameNotOver = true;
 
     float timerValue = 5;
+
     int points = 0;
+    [SerializeField] int lives = 3;
 
     string playerInput;
     string person;
@@ -19,13 +22,19 @@ public class GameManager : MonoBehaviour {
     WaitForSeconds countDownTimerInterval;
 
     void Start() {
+        lives = 3;
+
         timerText.text = points + " Points";
+        livesText.text = lives + " Lives";
+
         NewPersonAtDoor();
         TimeToAnswer();
     }
 
     void Update() {
-        timerText.text = timerValue.ToString("0") + " seconds left";
+        if(lives <= 0) {
+            GameOver();
+        }
 
         TimeToAnswer();
     }
@@ -48,9 +57,13 @@ public class GameManager : MonoBehaviour {
             playerInput = "Nothing";
             NewPersonAtDoor();
         } else if(playerInput != person) {
-            // Runs game over function
-            // print("It was not " + playerInput);
-            GameOver();
+            // Takes away a live
+            lives--;
+            livesText.text = lives + " Lives";
+
+            timerValue = 5;
+
+            NewPersonAtDoor();
         } 
     }
 
@@ -71,9 +84,13 @@ public class GameManager : MonoBehaviour {
             playerInput = "Nothing";
             NewPersonAtDoor();
         } else if(playerInput != person) {
-            // Runs game over function
-            // print("It was not " + playerInput);
-            GameOver();
+            // Takes away a live
+            lives--;
+            livesText.text = lives + " Lives";
+
+            timerValue = 5;
+
+            NewPersonAtDoor();
         } 
     }
 
@@ -99,11 +116,14 @@ public class GameManager : MonoBehaviour {
         print("GAME OVER NOOB");
     }
 
-    // 30 second timer function
+    // Timer function
     void TimeToAnswer() {
         if(gameNotOver) {
             timerValue -= Time.deltaTime;
-            if(timerValue <= 0) {
+
+            timerText.text = timerValue.ToString("0") + " seconds left";
+
+            if (timerValue <= 0) {
                 GameOver();
             }
         } 
