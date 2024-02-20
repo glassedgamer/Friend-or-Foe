@@ -8,12 +8,15 @@ public class GameManager : MonoBehaviour {
     [SerializeField] Text timerText;
     [SerializeField] Text pointsText;
     [SerializeField] Text livesText;
+    [SerializeField] Text countdownText;
+
+    WaitForSeconds introTimeBetween;
 
     GameObject levelChanger;
 
     AudioSource lobbyMusic;
 
-    bool gameNotOver = true;
+    bool gameNotOver = false;
 
     float timerValue = 5;
 
@@ -32,9 +35,12 @@ public class GameManager : MonoBehaviour {
         lobbyMusic.enabled = true;
 
         lives = 3;
+        introTimeBetween = new WaitForSeconds(1f);
 
         timerText.text = points + " Points";
         livesText.text = lives + " Lives";
+
+        StartCoroutine(IntroTimer());
 
         NewPersonAtDoor();
         TimeToAnswer();
@@ -139,6 +145,23 @@ public class GameManager : MonoBehaviour {
                 GameOver();
             }
         } 
+    }
+
+    IEnumerator IntroTimer() {
+        for (int i = 3; i >= 0; i--) {
+            countdownText.text = i.ToString();
+
+            if (i == 0) {
+                gameNotOver = true;
+
+                countdownText.text = "GO";
+                yield return introTimeBetween;
+                countdownText.gameObject.SetActive(false);
+            }
+
+            yield return introTimeBetween;
+
+        }
     }
     
 }
