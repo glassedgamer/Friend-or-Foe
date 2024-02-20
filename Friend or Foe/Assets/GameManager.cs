@@ -11,11 +11,13 @@ public class GameManager : MonoBehaviour {
 
     GameObject levelChanger;
 
+    AudioSource lobbyMusic;
+
     bool gameNotOver = true;
 
     float timerValue = 5;
 
-    int points = 0;
+    public static int points = 0;
     [SerializeField] int lives = 3;
 
     string playerInput;
@@ -25,6 +27,9 @@ public class GameManager : MonoBehaviour {
 
     void Start() {
         levelChanger = GameObject.FindWithTag("LevelChanger");
+        lobbyMusic = GameObject.FindWithTag("LobbyMusic").GetComponent<AudioSource>();
+
+        lobbyMusic.enabled = true;
 
         lives = 3;
 
@@ -116,6 +121,7 @@ public class GameManager : MonoBehaviour {
 
     void GameOver() {
         gameNotOver = false;
+        lobbyMusic.enabled = false;
 
         print("GAME OVER NOOB");
 
