@@ -5,14 +5,20 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
+    [Header("Text")]
     [SerializeField] Text timerText;
     [SerializeField] Text pointsText;
     [SerializeField] Text livesText;
     [SerializeField] Text countdownText;
 
-    WaitForSeconds introTimeBetween;
-
+    [Header("Game Objects")]
+    [SerializeField] GameObject shotEnemy;
+    [SerializeField] GameObject letInEnemy;
+    [SerializeField] GameObject shotNeighbor;
+    [SerializeField] GameObject letInNeighbor;
     GameObject levelChanger;
+
+    WaitForSeconds introTimeBetween;
 
     AudioSource lobbyMusic;
 
@@ -21,6 +27,8 @@ public class GameManager : MonoBehaviour {
     float timerValue = 5;
 
     public static int points = 0;
+    
+    [Header("Numbers")]
     [SerializeField] int lives = 3;
 
     string playerInput;
@@ -56,57 +64,84 @@ public class GameManager : MonoBehaviour {
 
     // Function that runs when friend button is pressed
     public void FriendButton() {
+        GameObject canvas = GameObject.Find("Canvas");
+
         // Sets player input to friend and prints it
         playerInput = "Friend";
         print(playerInput);
 
+        FindObjectOfType<AudioManager>().Play("Click");
+
         /* 
             If player input is equal to person, reset and add a point
             If the two are not equal, run the game over function
         */
+        if(gameNotOver) {
+            if(playerInput == person) {
+                FindObjectOfType<AudioManager>().Play("Point");
+                GameObject text = Instantiate(letInNeighbor, transform.position, Quaternion.identity);
+                text.transform.SetParent(canvas.transform);
 
-        if(playerInput == person) {
-            points++;
-            pointsText.text = points + " Points";
+                points++;
+                pointsText.text = points + " Points";
 
-            playerInput = "Nothing";
-            NewPersonAtDoor();
-        } else if(playerInput != person) {
-            // Takes away a live
-            lives--;
-            livesText.text = lives + " Lives";
+                playerInput = "Nothing";
+                NewPersonAtDoor();
+            } else if(playerInput != person) {
+                // Takes away a live
+                FindObjectOfType<AudioManager>().Play("Lose Life");
+                GameObject text = Instantiate(letInEnemy, transform.position, Quaternion.identity);
+                text.transform.SetParent(canvas.transform);
 
-            timerValue = 5;
+                lives--;
+                livesText.text = lives + " Lives";
 
-            NewPersonAtDoor();
-        } 
+                timerValue = 5;
+
+                NewPersonAtDoor();
+            }
+        }
     }
 
     // Function that runs when foe button is pressed
     public void FoeButton() {
+        GameObject canvas = GameObject.Find("Canvas");
+
         // Sets player input to foe and prints it
         playerInput = "Foe";
         print(playerInput);
+
+        FindObjectOfType<AudioManager>().Play("Click");
 
         /* 
             If player input is equal to person, reset and add a point
             If the two are not equal, run the game over function
         */
-        if(playerInput == person) {
-            points++;
-            pointsText.text = points + " Points";
+        if(gameNotOver) {
+            if(playerInput == person) {
+                FindObjectOfType<AudioManager>().Play("Point");
+                GameObject text = Instantiate(shotEnemy, transform.position, Quaternion.identity);
+                text.transform.SetParent(canvas.transform);
 
-            playerInput = "Nothing";
-            NewPersonAtDoor();
-        } else if(playerInput != person) {
-            // Takes away a live
-            lives--;
-            livesText.text = lives + " Lives";
+                points++;
+                pointsText.text = points + " Points";
 
-            timerValue = 5;
+                playerInput = "Nothing";
+                NewPersonAtDoor();
+            } else if(playerInput != person) {
+                // Takes away a live
+                FindObjectOfType<AudioManager>().Play("Lose Life");
+                GameObject text = Instantiate(shotNeighbor, transform.position, Quaternion.identity);
+                text.transform.SetParent(canvas.transform);
 
-            NewPersonAtDoor();
-        } 
+                lives--;
+                livesText.text = lives + " Lives";
+
+                timerValue = 5;
+
+                NewPersonAtDoor();
+            } 
+        }
     }
 
 

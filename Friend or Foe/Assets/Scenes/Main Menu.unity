@@ -218,7 +218,7 @@ RectTransform:
   - {fileID: 841430936}
   - {fileID: 421121399}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -299,7 +299,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &294211260
 GameObject:
@@ -384,7 +384,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 841430939}
+      - m_Target: {fileID: 1174679101}
         m_TargetAssemblyTypeName: MainMenuButtons, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
@@ -442,7 +442,6 @@ GameObject:
   - component: {fileID: 421121399}
   - component: {fileID: 421121402}
   - component: {fileID: 421121401}
-  - component: {fileID: 421121400}
   m_Layer: 5
   m_Name: How to Play
   m_TagString: Untagged
@@ -473,20 +472,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &421121400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421121398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee537c8b0b69dbc4caeceddaa1996eb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenu: {fileID: 841430935}
-  howToPlay: {fileID: 421121398}
 --- !u!114 &421121401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,7 +518,6 @@ GameObject:
   - component: {fileID: 841430936}
   - component: {fileID: 841430938}
   - component: {fileID: 841430937}
-  - component: {fileID: 841430939}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -600,20 +584,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841430935}
   m_CullTransparentMesh: 1
---- !u!114 &841430939
-MonoBehaviour:
+--- !u!1001 &949027203
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841430935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee537c8b0b69dbc4caeceddaa1996eb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenu: {fileID: 841430935}
-  howToPlay: {fileID: 421121398}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8807301378074788813, guid: cd029ca1ec1cb774ead0a8b12cec70bc, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807301378074788813, guid: cd029ca1ec1cb774ead0a8b12cec70bc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807301378074788813, guid: cd029ca1ec1cb774ead0a8b12cec70bc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807301378074788813, guid: cd029ca1ec1cb774ead0a8b12cec70bc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807301378074788813, guid: cd029ca1ec1cb774ead0a8b12cec70bc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807301378074788813, guid: cd029ca1ec1cb774ead0a8b12cec70bc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807301378074788813, guid: cd029ca1ec1cb774ead0a8b12cec70bc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807301378074788813, guid: cd029ca1ec1cb774ead0a8b12cec70bc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807301378074788813, guid: cd029ca1ec1cb774ead0a8b12cec70bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807301378074788813, guid: cd029ca1ec1cb774ead0a8b12cec70bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807301378074788813, guid: cd029ca1ec1cb774ead0a8b12cec70bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807301378074788815, guid: cd029ca1ec1cb774ead0a8b12cec70bc, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd029ca1ec1cb774ead0a8b12cec70bc, type: 3}
 --- !u!1 &1166966839
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +724,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 841430939}
+      - m_Target: {fileID: 1174679101}
         m_TargetAssemblyTypeName: MainMenuButtons, Assembly-CSharp
         m_MethodName: HowToPlay
         m_Mode: 1
@@ -744,6 +771,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166966839}
   m_CullTransparentMesh: 1
+--- !u!1 &1174679100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1174679102}
+  - component: {fileID: 1174679101}
+  m_Layer: 0
+  m_Name: Main Menu Actions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1174679101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174679100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee537c8b0b69dbc4caeceddaa1996eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenu: {fileID: 841430935}
+  howToPlay: {fileID: 421121398}
+--- !u!4 &1174679102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174679100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1368819585
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,7 +963,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: You are agent 117. You are a spy for a top secret agency. Your archnemesis,
     Master Malice, has sent his assassins after you, so the agency has put you in
-    a safe house in a suburban neighborhood. Howevr, Master Malice has found your
+    a safe house in a suburban neighborhood. However, Master Malice has found your
     location, and your neighbors also want to welcome you to the neighborhood. Whenever
     someone knocks at the door, determine if it is a friend or foe with the buttons
     on screen. If you guess wrong, you lose a life, and if you lose all 3, you lose.
@@ -1058,7 +1131,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 421121400}
+      - m_Target: {fileID: 1174679101}
         m_TargetAssemblyTypeName: MainMenuButtons, Assembly-CSharp
         m_MethodName: Back
         m_Mode: 1
@@ -1122,7 +1195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5652167056530035836, guid: 1b89d2e81d80ede4fb7056e175c03c6b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5652167056530035836, guid: 1b89d2e81d80ede4fb7056e175c03c6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1352,7 +1425,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 52d8bca73e2cecc42b90f18fdc7d79df, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.68
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1449,5 +1522,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -16,12 +16,16 @@ public class GameOverButtons : MonoBehaviour {
     }
 
     public void Retry() {
+        FindObjectOfType<AudioManager>().Play("Click");
+
         GameManager.points = 0;
 
         levelChanger.GetComponent<LevelChanger>().LoadFirstLevel();
     }
 
     public void MainMenu() {
+        FindObjectOfType<AudioManager>().Play("Click");
+
         GameManager.points = 0;
 
         levelChanger.GetComponent<LevelChanger>().LoadMainMenu();

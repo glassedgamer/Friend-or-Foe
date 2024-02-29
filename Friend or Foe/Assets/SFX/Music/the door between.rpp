@@ -1,4 +1,4 @@
-<REAPER_PROJECT 0.1 "6.82/win64" 1708185321
+<REAPER_PROJECT 0.1 "6.63/win64" 1708752673
   <NOTES 0 2
   >
   RIPPLE 0
@@ -16,7 +16,7 @@
   TIMEMODE 1 5 -1 30 0 0 -1
   VIDEO_CONFIG 0 0 256
   PANMODE 3
-  CURSOR 23.2
+  CURSOR 11.2
   ZOOM 19.54701321077272 0 0
   VZOOMEX 6 0
   USE_REC_CFG 0
@@ -30,9 +30,8 @@
   >
   <APPLYFX_CFG
   >
-  RENDER_FILE ""
-  RENDER_PATTERN ""
-  RENDER_FMT 0 2 0
+  RENDER_FILE "C:\Users\glass\OneDrive\Desktop\Github\Friend-or-Foe\Friend or Foe\Assets\SFX\Music\the door between v2.wav"
+  RENDER_FMT 0 2 44100
   RENDER_1X 0
   RENDER_RANGE 1 0 0 18 1000
   RENDER_RESAMPLE 3 0 1
@@ -60,8 +59,8 @@
   GLOBAL_AUTO -1
   TEMPO 150 4 4
   PLAYRATE 1 0 0.25 4
-  SELECTION 25.6 25.6
-  SELECTION2 25.6 25.6
+  SELECTION 16.8 15.2
+  SELECTION2 16.8 15.2
   MASTERAUTOMODE 0
   MASTERTRACKHEIGHT 0 0
   MASTERPEAKCOL 16576
@@ -121,12 +120,13 @@
       DOCKED 0
       BYPASS 0 0 0
       <VST "VSTi: sforzando (Plogue Art et Technologie, Inc)" "sforzando VST_x64.dll" 0 "" 1347176273<565354504C475173666F727A616E646F> ""
-        UUdMUO5e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAADPAQAAAQAAAAAAEAA=
-        Q0VHUOkEAAB4nI1UTW+jMBC9r7T/wfK9xU5I0kjQKruNKg7RrpTuXqPBOKlVf2TBoPbf7+AEyqEVcAnz/GbmecKb5OHNaNLIslLOppTfMkoe7r9/Szalgj00cnC2Xq0o
-        OZeuqIXPHhFgPKbIJfgke+m9sqeK/KtBK/+Ox5RUvpRgEE7pfEaJgbd9QDZaO7H7kdIFR3iXPWa/ar9zhQxZUHtnwGPTvXY+pWwIadlInVJlsXZtpPWUaNXISzIyK4E1
-        4vYXNCDCyQ2RrabbSugr/BPTZJnSJfJP2uWgn2sbVCIQ9TfC5kQVAbRgsHx1nEVPThfSbt/lgbHVoUVYPD/8VXkJ5xdnJSU52NcM02LGMLMfH76LF7C2VX+Dtzw7jUNa
-        olT/0fycH0qwJ3mleAyqcGAGr054/GP62y4Qqn2Ir9KD/B0o28lvQNeX2UafUnhPYV9RZuOU+TglHqcsxinLccpqnHI3TlmPUzibwJkwXz5hwHzChPmEEfOvZ/wbSjDX
-        ZvyzDyeJWl90wfZ4lMIPndL57+KYjcmVtGLgirA0hkslXoelInoH952e/mRdVRAeTZ597IMQb/u4khp1yOIZ8ot12iJJ1C0xDP4DeldMrA==
+        UUdMUO5e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAADiAQAAAQAAAAAAEAA=
+        Q0VHUCAFAAB4nI2UwY6bMBCG75X6DpbvG2wgIZGgq7QbrThErZRtr9FgnCyqsVMwaPftOzGB5bARcMHz+xvPeGAmfnwrFWllVRdGJ5QvGCWP375+ibdVAQdo5WhvE0WU
+        XCqTN8KmTygwHlJkCT7xQVpb6HNN/jWgCvuO25TUtpJQopzQwKekhLeDU7ZKGbH/ntAlR3mfPqU/G7s3uXRe0FhTgsWgB2VsQtlYUrKVKqGFxrObUmpLiSpa2TkjWYuE
+        +u4NClDh5IHIa06LWqib/APdZJXQFXJnZTJQL412WaLgDTfC4KTInaihxOPrk+89G5VLvXuXR8ai41VhYXD8U2QVXF6NlpRkoP+m6BYyhp5D+XAtXkHra/YPeMuLUVik
+        VUiJ/Qh+yY4V6LO8IRaN2m2Uo6URFj/McFuOZNlYJ9xyd/nvodB9/i2opiuu9ynCB4TdQ/xpJJhGwmlkOY2sppFoGllPI5tphLMZzIz68hkF5jMqzGeUmN+v8S+ooOwq
+        OAq24HzNOfODzZIto1W0vuvFA/7Z7xZ713bqjd3pJIUdN1jftl2jbcuskFqMmsnNmvEsCjduFomh8YdIz7/T/lQQFmdD+jFGnL0b7FoqzEPmL5B1HXc9JPb62YfGf7sh
+        WNg=
         AGVtcHR5IHNsb3QwABAAAAA=
       >
       PRESETNAME "empty slot0"
@@ -162,36 +162,52 @@
         E 960 80 3c 00
         E 0 90 3c 7f
         E 960 80 3c 00
+        E 0 90 3a 7f
+        E 1920 80 3a 00
+        E 0 90 3d 7f
+        E 2880 80 3d 00
+        E 0 90 3e 7f
+        E 1920 80 3e 00
+        E 0 90 3e 7f
+        E 2880 80 3e 00
+        E 0 90 3f 7f
+        E 960 80 3f 00
+        E 0 90 3f 7f
+        E 1920 80 3f 00
+        E 0 90 3a 7f
+        E 960 80 3a 00
+        E 0 90 3d 7f
+        E 960 80 3d 00
+        E 0 90 3d 7f
+        E 960 80 3d 00
+        E 0 90 3a 7f
+        E 960 80 3a 00
+        E 0 90 41 7f
+        E 2880 80 41 00
+        e 0 90 3d 7f
+        e 960 80 3d 00
+        E 0 90 3c 7f
+        E 1920 80 3c 00
+        E 0 90 39 7f
+        E 960 80 39 00
         E 0 90 3c 7f
         E 960 80 3c 00
-        E 960 90 3d 7f
-        E 960 80 3d 00
-        E 0 90 3d 7f
-        E 960 80 3d 00
-        E 0 90 3d 7f
-        E 960 80 3d 00
-        E 960 90 3e 7f
-        E 960 80 3e 00
-        E 0 90 3e 7f
-        E 960 80 3e 00
-        E 0 90 3e 7f
-        E 960 80 3e 00
-        E 960 90 3f 7f
-        E 960 80 3f 00
-        E 0 90 3f 7f
-        E 960 80 3f 00
-        E 0 90 3f 7f
-        E 960 80 3f 00
-        E 0 90 3f 7f
-        E 960 80 3f 00
-        E 14400 b0 7b 00
+        E 0 90 45 7f
+        E 960 80 45 00
+        E 0 90 39 7f
+        E 960 80 39 00
+        E 0 90 3c 7f
+        E 960 80 3c 00
+        E 0 90 45 7f
+        E 960 80 45 00
+        E 0 b0 7b 00
         CCINTERP 32
         CHASE_CC_TAKEOFFS 1
         GUID {5C52649E-37E1-409F-903C-179436D89F29}
         IGNTEMPO 0 120 4 4
         SRCCOLOR 1418
         VELLANE -1 100 0
-        CFGEDITVIEW 6548.715785 0.09305 44 21 0 -1 0 0 0 0.5
+        CFGEDITVIEW 9111.568162 0.022211 32 11 0 -1 0 0 0 0.5
         KEYSNAP 0
         TRACKSEL 0
         EVTFILTER 0 -1 -1 -1 -1 0 0 0 0 -1 -1 -1 -1 0 -1 0 -1 -1
@@ -212,7 +228,7 @@
     BUSCOMP 0 0 0 0 0
     SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0
     SEL 0
-    REC 1 5088 1 0 0 0 0 0
+    REC 0 5088 1 0 0 0 0 0
     VU 2
     TRACKHEIGHT 0 0 0 0 0 0
     INQ 0 0 0 0.5 100 0 0 100
@@ -333,6 +349,7 @@
         PSIxLjAiIGNjU2tldz0iMS4wIiBjY0ZsaXA9IjAiLz48L1BBUkFNRVRFUlM+PC9MYWJzPgA=
         AFByb2dyYW0gMQAQAAAA
       >
+      PRESETNAME "Program 1"
       FLOATPOS 0 0 0 0
       FXID {B2521B45-1FE8-459C-A133-4C71B38855B3}
       WAK 0 0
@@ -645,6 +662,7 @@
         Y0Zyb209IjAuMCIgY2NUbz0iMS4wIiBjY1NrZXc9IjEuMCIgY2NGbGlwPSIwIi8+PC9QQVJBTUVURVJTPjwvTGFicz4A
         AFByb2dyYW0gMQAQAAAA
       >
+      PRESETNAME "Program 1"
       FLOATPOS 0 0 0 0
       FXID {E81D30D9-67FE-4918-A7D1-7B049526E71F}
       WAK 0 0
@@ -925,6 +943,7 @@
         TGFicz4A
         AFByb2dyYW0gMQAQAAAA
       >
+      PRESETNAME "Program 1"
       FLOATPOS 0 0 0 0
       FXID {543AB860-3022-4BBE-AFBA-1296FDEF0E19}
       WAK 0 0
@@ -1015,11 +1034,11 @@
       BYPASS 0 0 0
       <VST "VSTi: sforzando (Plogue Art et Technologie, Inc)" "sforzando VST_x64.dll" 0 "" 1347176273<565354504C475173666F727A616E646F> ""
         UUdMUO5e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAADXAQAAAQAAAAAAEAA=
-        Q0VHUPIEAAB4nI1UTY+bMBC9V+p/sHxqD7vYCZs0EnSVNtEKVVErZXtGg3FSq/5IwaDdf9/BCYTDrggXmOc3n/hN8vhiNGllVStnU8rvGSWPXz9+SNaVgj20cnS2Wi4p
-        OVWubITPNggwHlPkEnySvfRe2WNN/jWglX/FY0pqX0kwCKd0PqPEwMs+IGutndh9S+kDR3iXbbKfjd+5UgYvaLwz4DHpXjufUjaGtGylTqmyGLsx0npKtGrl2RmZtcAY
-        s+4NGhDh5I7Irqb7WugL/B3dZJXSBfKP2hWgnxsbqkQgGjrC5ESVAbRgMHx9mEVPTpfSbl9lztgy7xA2j/MN1pL/UD7/tNVS+EqJz5QUYP9m6B8zhiGGOeK3+APWdm3c
-        Ybsnp3Fai5gSf63iVOQV2KO8UDwadTgwo08nPP6hoW2MYBof7EsPoY8dKNv30YJuzkOO3qTwgcLeo8ymKfNpSjxNeZimLKYpy2nKl2nKaprC2Q2cG+bLbxgwv2HC/IYR
-        8/dn/AsqMJdk/K2Lk0SdQHpjezjgvR9LphfiWTprUyhphbyqImyP8XaJV2G7iEHKQ6an31kfFYRHtWfXxRDs7WDXstOfLJ+hOEunC5JE/TZD4z+yGE+T
+        Q0VHUPMEAAB4nI1UXW+bMBR9n7T/YPlpe2ixE5o0ErTKlqhCU9RJ6Z7RxTipNWNnYFD773dxAuGhFfAC9/jcT3xu9PhWaNLIslLWxJTfMkoeH75+idalgj00cnC2Wi4p
+        OZU2r4VLNggwHlLkEnyivXROmWNF/tWglXvHY0oqV0ooEI7pfEZJAW97j6y1tmL3I6Z3HOFdskmea7ezufReUDtbgMOke21dTNkQ0rKROqbKYOy6kMZRolUjz87IrATG
+        uG/foAERTm6IbGu6rYS+wD/RTZYxXSD/qG0G+qU2vkoEgr4jTE5U7kEDBYavDrPgyepcmu27TBlbpi3C5mG6wVrSX8ql37ZaClcq8Z2SDMzfBP1DxjBEP0f8Fq9gTNvG
+        DbZ7shqntQgpcdcqTllagjnKC8WhUfmDYvBphcM/dG27xWrngUsTvpEdKNM10oCuz1MOPqTwnsI+o8zGKfNxSjhOuRunLMYpy3HK/ThlNU7hbAJnwnz5hAHzCRPmE0bM
+        P5/xbyihuCTjH12cKGgV0hnbwwEv/lAznRLP2lkXmZJGyKss/PoYrpdw5deL6LXcZ3r6k3RRQTiUe3LdDN7e9nYlWwHK/AWys3baIFHQrTM0/gPqjE/M
         AGVtcHR5IHNsb3QwABAAAAA=
       >
       PRESETNAME "empty slot0"

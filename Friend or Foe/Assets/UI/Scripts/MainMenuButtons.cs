@@ -11,7 +11,7 @@ public class MainMenuButtons : MonoBehaviour {
 
     AudioSource lobbyMusic;
 
-    void Start() {
+    void Awake() {
         levelChanger = GameObject.FindWithTag("LevelChanger");
         lobbyMusic = GameObject.FindWithTag("LobbyMusic").GetComponent<AudioSource>();
 
@@ -22,17 +22,21 @@ public class MainMenuButtons : MonoBehaviour {
     }
 
     public void Play() {
+        FindObjectOfType<AudioManager>().Play("Click");
+
         lobbyMusic.enabled = false;
 
         levelChanger.GetComponent<LevelChanger>().LoadFirstLevel();
     }
 
     public void HowToPlay() {
+        FindObjectOfType<AudioManager>().Play("Click");
         mainMenu.SetActive(false);
         howToPlay.SetActive(true);
     }
 
     public void Back() {
+        FindObjectOfType<AudioManager>().Play("Click");
         mainMenu.SetActive(true);
         howToPlay.SetActive(false);
     }
