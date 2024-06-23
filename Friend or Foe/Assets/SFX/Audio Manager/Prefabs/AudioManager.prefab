@@ -63,4 +63,10 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Knock Knock
+    clip: {fileID: 8300000, guid: 67cf602871bd670458ef6bdbb3bad25b, type: 3}
+    volume: 0.85
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   mainMenu: 0

@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour {
     AudioSource lobbyMusic;
 
     bool gameNotOver = false;
+    bool newPerson = false;
 
     float timerValue = 5;
 
@@ -50,13 +51,17 @@ public class GameManager : MonoBehaviour {
 
         StartCoroutine(IntroTimer());
 
-        NewPersonAtDoor();
+        // NewPersonAtDoor();
         TimeToAnswer();
     }
 
     void Update() {
         if(lives <= 0) {
             GameOver();
+        }
+
+        if(newPerson == false) {
+            timerValue = 5;
         }
 
         TimeToAnswer();
@@ -76,29 +81,33 @@ public class GameManager : MonoBehaviour {
             If player input is equal to person, reset and add a point
             If the two are not equal, run the game over function
         */
-        if(gameNotOver) {
+        if(gameNotOver && newPerson) {
             if(playerInput == person) {
                 FindObjectOfType<AudioManager>().Play("Point");
                 GameObject text = Instantiate(letInNeighbor, transform.position, Quaternion.identity);
                 text.transform.SetParent(canvas.transform);
 
+                newPerson = false;
+
                 points++;
                 pointsText.text = points + " Points";
 
                 playerInput = "Nothing";
-                NewPersonAtDoor();
+                StartCoroutine(NewPersonDelay());
             } else if(playerInput != person) {
                 // Takes away a live
                 FindObjectOfType<AudioManager>().Play("Lose Life");
                 GameObject text = Instantiate(letInEnemy, transform.position, Quaternion.identity);
                 text.transform.SetParent(canvas.transform);
 
+                newPerson = false;
+
                 lives--;
                 livesText.text = lives + " Lives";
 
                 timerValue = 5;
 
-                NewPersonAtDoor();
+                StartCoroutine(NewPersonDelay());
             }
         }
     }
@@ -117,29 +126,33 @@ public class GameManager : MonoBehaviour {
             If player input is equal to person, reset and add a point
             If the two are not equal, run the game over function
         */
-        if(gameNotOver) {
+        if(gameNotOver && newPerson) {
             if(playerInput == person) {
                 FindObjectOfType<AudioManager>().Play("Point");
                 GameObject text = Instantiate(shotEnemy, transform.position, Quaternion.identity);
                 text.transform.SetParent(canvas.transform);
 
+                newPerson = false;
+
                 points++;
                 pointsText.text = points + " Points";
 
                 playerInput = "Nothing";
-                NewPersonAtDoor();
+                StartCoroutine(NewPersonDelay());
             } else if(playerInput != person) {
                 // Takes away a live
                 FindObjectOfType<AudioManager>().Play("Lose Life");
                 GameObject text = Instantiate(shotNeighbor, transform.position, Quaternion.identity);
                 text.transform.SetParent(canvas.transform);
 
+                newPerson = false;
+
                 lives--;
                 livesText.text = lives + " Lives";
 
                 timerValue = 5;
 
-                NewPersonAtDoor();
+                StartCoroutine(NewPersonDelay());
             } 
         }
     }
@@ -147,6 +160,8 @@ public class GameManager : MonoBehaviour {
 
     // Randomally sets a new person to hide behind door while starting 30 second timer
     void NewPersonAtDoor() {
+        newPerson = true;
+
         timerValue = 5;
 
         var randomInt = Random.Range(1, 3);
@@ -156,6 +171,8 @@ public class GameManager : MonoBehaviour {
         } else if(randomInt == 2) {
             person = "Foe";
         }
+
+        FindObjectOfType<AudioManager>().Play("Knock Knock");
 
         // TimeToAnswer();
     }
@@ -172,12 +189,14 @@ public class GameManager : MonoBehaviour {
     // Timer function
     void TimeToAnswer() {
         if(gameNotOver) {
-            timerValue -= Time.deltaTime;
+            if(newPerson) {
+                timerValue -= Time.deltaTime;
 
-            timerText.text = timerValue.ToString("0") + " seconds left";
+                timerText.text = timerValue.ToString("0") + " seconds left";
 
-            if (timerValue <= 0) {
-                GameOver();
+                if (timerValue <= 0) {
+                    GameOver();
+                }
             }
         } 
     }
@@ -192,6 +211,21 @@ public class GameManager : MonoBehaviour {
                 countdownText.text = "GO";
                 yield return introTimeBetween;
                 countdownText.gameObject.SetActive(false);
+
+                NewPersonAtDoor();
+            }
+
+            yield return introTimeBetween;
+
+        }
+    }
+
+    IEnumerator NewPersonDelay() {
+        for (int i = 2; i >= 0; i--) {
+            countdownText.text = i.ToString();
+
+            if (i == 0) {
+                NewPersonAtDoor();
             }
 
             yield return introTimeBetween;
